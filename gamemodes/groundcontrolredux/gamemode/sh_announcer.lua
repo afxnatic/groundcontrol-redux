@@ -89,18 +89,20 @@ end
 GM:registerAnnouncer("ghetto")
 
 GM:registerAnnouncement("ghetto", "drugs_retrieved", {
-    "ground_control/radio/franklin/drugs_retrieved1.ogg",
-    "ground_control/radio/franklin/drugs_retrieved2.ogg",
-    "ground_control/radio/franklin/drugs_retrieved3.ogg"}, nil)
+    "ground_control/radio/ghetto/drugs_retrieved1.mp3",
+    "ground_control/radio/ghetto/drugs_retrieved2.mp3",
+    "ground_control/radio/ghetto/drugs_retrieved3.mp3",
+    "ground_control/radio/ghetto/drugs_retrieved4.mp3"}, nil)
 
 GM:registerAnnouncement("ghetto", "drugs_secured", {
-    "ground_control/radio/franklin/drugs_secured1.ogg",
-    "ground_control/radio/franklin/drugs_secured2.ogg"}, nil)
+    "ground_control/radio/ghetto/drugs_secured1.mp3",
+    "ground_control/radio/ghetto/drugs_secured2.mp3",
+    "ground_control/radio/ghetto/drugs_secured3.mp3"}, nil)
 
 GM:registerAnnouncement("ghetto", "drugs_stolen", {
-    "ground_control/radio/franklin/drugs_stolen1.ogg",
-    "ground_control/radio/franklin/drugs_stolen2.ogg",
-    "ground_control/radio/franklin/drugs_stolen3.ogg"}, function()
+    "ground_control/radio/ghetto/drugs_stolen1.mp3",
+    "ground_control/radio/ghetto/drugs_stolen2.mp3",
+    "ground_control/radio/ghetto/drugs_stolen3.mp3"}, function()
         local popup = vgui.Create("GCGenericPopup")
 
         popup:SetText("The attackers have taken the drugs!", "Stop them and bring the dope back!")
@@ -113,10 +115,11 @@ GM:registerAnnouncement("ghetto", "drugs_stolen", {
     end)
 
 GM:registerAnnouncement("ghetto", "retrieve_drugs", {
-    "ground_control/radio/franklin/retrieve_drugs1.mp3",
-    "ground_control/radio/franklin/retrieve_drugs2.mp3",
-    "ground_control/radio/franklin/retrieve_drugs3.mp3"}, nil)
+    "ground_control/radio/ghetto/retrieve_drugs1.mp3",
+    "ground_control/radio/ghetto/retrieve_drugs2.mp3",
+    "ground_control/radio/ghetto/retrieve_drugs3.mp3"}, nil)
 
 GM:registerAnnouncement("ghetto", "return_drugs", {
-    "ground_control/radio/franklin/return_drugs1.mp3",
-    "ground_control/radio/franklin/return_drugs2.mp3"}, nil)
+    "ground_control/radio/ghetto/return_drugs1.mp3",
+    "ground_control/radio/ghetto/return_drugs2.mp3",
+    "ground_control/radio/ghetto/return_drugs3.mp3"}, nil)

@@ -94,10 +94,8 @@ GM:RegisterRadioVoiceVariant("rus", "RUS", nil, "models/player/riot.mdl", "model
 GM:RegisterRadioVoiceVariant("bandlet", "Cheeki", nil, "models/player/bandit_backpack.mdl", "models/custom/stalker_bandit_veteran.mdl", false, true)
 -- GM:RegisterRadioVoiceVariant("combine", "Combine", nil,
 --     {"models/player/group01/male_03.mdl", "models/player/group01/male_01.mdl"}, {"models/player/group01/male_03.mdl", "models/player/group01/male_01.mdl"}, true)
-GM:RegisterRadioVoiceVariant("franklin", "Franklin", nil,
-    {"models/player/group01/male_03.mdl", "models/player/Eli.mdl", "models/player/group01/male_01.mdl"}, {"models/player/group01/male_03.mdl", "models/player/Eli.mdl", "models/player/group01/male_01.mdl"}, true, true)
-GM:RegisterRadioVoiceVariant("trevor", "Trevor", nil,
-    {"models/player/Group02/Male_04.mdl", "models/player/Group02/male_02.mdl", "models/player/Group01/male_07.mdl"}, {"models/player/Group02/Male_04.mdl", "models/player/Group02/male_02.mdl", "models/player/Group01/male_07.mdl"}, true, true)
+GM:RegisterRadioVoiceVariant("ghetto", "ghetto", nil,
+    {"models/player/Group01/male_01.mdl", "models/player/Group01/male_03.mdl"}, {"models/player/Group01/male_01.mdl", "models/player/Group01/male_03.mdl"}, true, true)
 GM:RegisterRadioVoiceVariant("vip", "VIP", nil, "models/player/gman_high.mdl", "models/player/gman_high.mdl", true, true)
 
 function GM:registerRadioCommand(data)
@@ -180,18 +178,14 @@ command.variations = {us = {{sound = "ground_control/radio/us/contact.mp3", text
         {sound = "ground_control/radio/rus/enemyspotted14.mp3", text = "Контакт!"},
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/enemy_spotted1.ogg", text = "Down there!"},
-        {sound = "ground_control/radio/franklin/enemy_spotted2.ogg", text = "You see that!?"},
-        {sound = "ground_control/radio/franklin/enemy_spotted3.ogg", text = "There!"},
-        {sound = "ground_control/radio/franklin/enemy_spotted4.ogg", text = "Man, you ugly as a motherfucker."},
-        {sound = "ground_control/radio/franklin/enemy_spotted5.ogg", text = "Damn, the popo, shit!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/enemy_spotted1.ogg", text = "Look behind you, genius!"},
-        {sound = "ground_control/radio/trevor/enemy_spotted2.ogg", text = "In this light, you look seriously inbred."},
-        {sound = "ground_control/radio/trevor/enemy_spotted3.ogg", text = "How are you allowed to walk the streets, moron?"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/enemy_spotted1.mp3", text = "Shit, I used to know that nigga from school!"},
+        {sound = "ground_control/radio/ghetto/enemy_spotted2.mp3", text = "Shit, I know that nigga from down the block!"},
+        {sound = "ground_control/radio/ghetto/enemy_spotted3.mp3", text = "I see the popos!"},
+        {sound = "ground_control/radio/ghetto/enemy_spotted4.mp3", text = "It's the Five-O!"},
+        {sound = "ground_control/radio/ghetto/enemy_spotted5.mp3", text = "I see them whiteboys!"},
+        {sound = "ground_control/radio/ghetto/enemy_spotted6.mp3", text = "Ey yo, them crackers be there!"},
+        {sound = "ground_control/radio/ghetto/enemy_spotted7.mp3", text = "Look at them pigs over there!"}
     }
 }
 
@@ -280,17 +274,13 @@ command.variations = {
         {sound = "ground_control/radio/rus/enemydown11.mp3", text = "А, скопытился, падла?!"},
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/enemy_down1.ogg", text = "Yeah, you have a nice day."},
-        {sound = "ground_control/radio/franklin/enemy_down2.ogg", text = "Goodnight!"},
-        {sound = "ground_control/radio/franklin/enemy_down3.ogg", text = "I guess that settles that."},
-        {sound = "ground_control/radio/franklin/areaclear2.ogg", text = "You punkass bitches done, now!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/enemy_down1.ogg", text = "Fuckin' fuck."},
-        {sound = "ground_control/radio/trevor/enemy_down2.ogg", text = "Didn't even put up a fight!"},
-        {sound = "ground_control/radio/trevor/enemy_down3.ogg", text = "Still in my prime!."}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/enemy_down1.mp3", text = "I shot that nigga!"},
+        {sound = "ground_control/radio/ghetto/enemy_down2.mp3", text = "Popped a cap in his ass!"},
+        {sound = "ground_control/radio/ghetto/enemy_down3.mp3", text = "Got one of them whiteboys!"},
+        {sound = "ground_control/radio/ghetto/enemy_down4.mp3", text = "I fucked that nigga up!"},
+        {sound = "ground_control/radio/ghetto/enemy_down5.mp3", text = "Lit that cracker up!"},
+        {sound = "ground_control/radio/ghetto/enemy_down6.mp3", text = "Black lives matter, nigga!"}
     }
 }
 
@@ -363,16 +353,13 @@ command.variations = {
         {sound = "ground_control/radio/rus/affirmative5.mp3", text = "Выполняю."}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/affirmative1.ogg", text = "Fo' sho', les go."},
-        {sound = "ground_control/radio/franklin/affirmative2.ogg", text = "Hell yeah."},
-        {sound = "ground_control/radio/franklin/affirmative3.ogg", text = "It's cool."}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/affirmative1.ogg", text = "Ooh, if you say so."},
-        {sound = "ground_control/radio/trevor/affirmative2.ogg", text = "Okay. Let's do this."},
-        {sound = "ground_control/radio/trevor/affirmative3.ogg", text = "Yeah."}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/affirmative1.mp3", text = "Aight."},
+        {sound = "ground_control/radio/ghetto/affirmative2.mp3", text = "Whatever you say, nigga."},
+        {sound = "ground_control/radio/ghetto/affirmative3.mp3", text = "I got you, cus'"},
+        {sound = "ground_control/radio/ghetto/affirmative4.mp3", text = "Yeah, what he said."},
+        {sound = "ground_control/radio/ghetto/affirmative5.mp3", text = "You right, nigga."},
+        {sound = "ground_control/radio/ghetto/affirmative6.mp3", text = "True that, mayne."}
     }
 }
 
@@ -409,16 +396,13 @@ command.variations = {us = {{sound = "ground_control/radio/us/nocando.mp3", text
         {sound = "ground_control/radio/rus/negative4.mp3", text = "Пошёл ты."}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/negative1.ogg", text = "Man, screw this."},
-        {sound = "ground_control/radio/franklin/negative2.ogg", text = "Oh, for fuck's sake!"},
-        {sound = "ground_control/radio/franklin/negative3.ogg", text = "Ey, stop doin' that shit!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/negative1.ogg", text = "Twat."},
-        {sound = "ground_control/radio/trevor/negative2.ogg", text = "Does barking orders make you excited?"},
-        {sound = "ground_control/radio/trevor/negative3.ogg", text = "Don't be ridiculous."}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/negative1.mp3", text = "Fuck that shit."},
+        {sound = "ground_control/radio/ghetto/negative2.mp3", text = "Hell no, man."},
+        {sound = "ground_control/radio/ghetto/negative3.mp3", text = "Nah, nigga, you crazy."},
+        {sound = "ground_control/radio/ghetto/negative4.mp3", text = "Nigga you trippin!"},
+        {sound = "ground_control/radio/ghetto/negative5.mp3", text = "My nigga, you's is stupid."},
+        {sound = "ground_control/radio/ghetto/negative6.mp3", text = "Fuck you, nigga."},
     }
 }
 
@@ -456,16 +440,12 @@ command.variations = {
         {sound = "ground_control/radio/rus/thanks5.mp3", text = "Спасибо, братан."}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/thanks1.ogg", text = "Thank you for that."},
-        {sound = "ground_control/radio/franklin/thanks2.ogg", text = "That's cool, homie, thanks."},
-        {sound = "ground_control/radio/franklin/thanks3.ogg", text = "Yeah, thanks a lot."}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/thanks1.ogg", text = "Thank you."},
-        {sound = "ground_control/radio/trevor/thanks2.ogg", text = "Thank you."},
-        {sound = "ground_control/radio/trevor/thanks3.ogg", text = "Why, thank you."}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/thanks1.mp3", text = "You my nigga."},
+        {sound = "ground_control/radio/ghetto/thanks2.mp3", text = "Thanks, nigga."},
+        {sound = "ground_control/radio/ghetto/thanks3.mp3", text = "You's a real nigga."},
+        {sound = "ground_control/radio/ghetto/thanks4.mp3", text = "You a dope ass nigga."},
+        {sound = "ground_control/radio/ghetto/thanks5.mp3", text = "Thanks, bruh."}
     }
 }
 
@@ -502,15 +482,11 @@ command.variations = {us = {
         {sound = "ground_control/radio/rus/wait4.mp3", text = "Эй, тормозни!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/wait1.ogg", text = "Ey man, I'm comin'."},
-        {sound = "ground_control/radio/franklin/wait2.ogg", text = "Don't leave my ass!"},
-        {sound = "ground_control/radio/franklin/wait3.ogg", text = "Hold on a second, dog!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/wait1.ogg", text = "Wait up!"},
-        {sound = "ground_control/radio/trevor/wait2.ogg", text = "Don't forget about me, assholes!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/wait1.mp3", text = "Ey, wait for me man!"},
+        {sound = "ground_control/radio/ghetto/wait2.mp3", text = "Ayo, wait up niggas!"},
+        {sound = "ground_control/radio/ghetto/wait3.mp3", text = "Hol' up, niggas!"},
+        {sound = "ground_control/radio/ghetto/wait4.mp3", text = "Slow down, cus'!"}
     }
 }
 
@@ -548,16 +524,11 @@ command.variations = {
         {sound = "ground_control/radio/rus/moving6.mp3", text = "Топаю."}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/moving1.ogg", text = "Hold up, I got this."},
-        {sound = "ground_control/radio/franklin/moving2.ogg", text = "Gettin' there."},
-        {sound = "ground_control/radio/franklin/moving3.ogg", text = "Get out of my way!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/moving1.ogg", text = "Coming through."},
-        {sound = "ground_control/radio/trevor/moving2.ogg", text = "Get out of the way!"},
-        {sound = "ground_control/radio/trevor/moving3.ogg", text = "Let's go, let's go!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/moving1.mp3", text = "My black ass is movin!"},
+        {sound = "ground_control/radio/ghetto/moving2.mp3", text = "Ey man, I'm movin!"},
+        {sound = "ground_control/radio/ghetto/moving3.mp3", text = "Ey man, I'm goin!"},
+        {sound = "ground_control/radio/ghetto/moving4.mp3", text = "I'm movin up, niggas!"}
     }
 }
 
@@ -587,15 +558,11 @@ command.variations = {us = {{sound = "ground_control/radio/us/suppressthispositi
         {sound = "ground_control/radio/rus/suppress3.mp3", text = "Открыть шквальный огонь!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/suppress1.ogg", text = "Stay down!"},
-        {sound = "ground_control/radio/franklin/suppress2.ogg", text = "Stay the fuck down!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/suppress1.ogg", text = "Off with the aliens!"},
-        {sound = "ground_control/radio/trevor/suppress2.ogg", text = "Let's have some sophisticated fun!"},
-        {sound = "ground_control/radio/trevor/suppress3.ogg", text = "You're gone, pal, gone!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/suppress1.mp3", text = "Shoot them po-pos!"},
+        {sound = "ground_control/radio/ghetto/suppress2.mp3", text = "Fuck 'em up!"},
+        {sound = "ground_control/radio/ghetto/suppress3.mp3", text = "Shoot them whiteboys!"},
+        {sound = "ground_control/radio/ghetto/suppress4.mp3", text = "Roll the window down on 'em!"}
     }
 }
 
@@ -652,15 +619,10 @@ command.variations = {us = {{sound = "ground_control/radio/us/defendthisposition
         {sound = "ground_control/radio/rus/defend4.mp3", text = "Круговая оборона!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/defend1.ogg", text = "Ey, let's do this thing, bitch!"},
-        {sound = "ground_control/radio/franklin/defend2.ogg", text = "Help me, come on!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/defend1.ogg", text = "Slow down."},
-        {sound = "ground_control/radio/trevor/defend2.ogg", text = "Keep your head down!"},
-        {sound = "ground_control/radio/trevor/defend3.ogg", text = "Stay down!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/defend1.mp3", text = "Don't let them whiteboys come through here!"},
+        {sound = "ground_control/radio/ghetto/defend2.mp3", text = "Don't let the fuzz come through here!"},
+        {sound = "ground_control/radio/ghetto/defend3.mp3", text = "Defend this place from them pigs!"}
     }
 }
 
@@ -714,16 +676,12 @@ command.variations = {us = {{sound = "ground_control/radio/us/followme.mp3", tex
         {sound = "ground_control/radio/rus/follow4.mp3", text = "Давай, давай, за мной!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/followme1.ogg", text = "Come on!"},
-        {sound = "ground_control/radio/franklin/followme2.ogg", text = "Come on!"},
-        {sound = "ground_control/radio/franklin/followme3.ogg", text = "Come on!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/followme1.ogg", text = "Come on!"},
-        {sound = "ground_control/radio/trevor/followme2.ogg", text = "Clock is ticking!"},
-        {sound = "ground_control/radio/trevor/followme3.ogg", text = "Come on, people!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/followme1.mp3", text = "Come with me, nigga!"},
+        {sound = "ground_control/radio/ghetto/followme2.mp3", text = "Ayo cus', follow me!"},
+        {sound = "ground_control/radio/ghetto/followme3.mp3", text = "Follow my black ass!"},
+        {sound = "ground_control/radio/ghetto/followme4.mp3", text = "Follow me, bruh!"},
+        {sound = "ground_control/radio/ghetto/followme5.mp3", text = "Follow me, bruh!"}
     }
 }
 
@@ -760,15 +718,11 @@ command.variations = {
         {sound = "ground_control/radio/rus/medic4.mp3", text = "Меня зацепили!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/needmedic1.ogg", text = "Ah, crap! That hurt!"},
-        {sound = "ground_control/radio/franklin/needmedic2.ogg", text = "Agh, somethin' don't feel too good!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/needmedic1.ogg", text = "Oowwhhhhhhhhh, mother!"},
-        {sound = "ground_control/radio/trevor/needmedic2.ogg", text = "Ugh, that hurts!"},
-        {sound = "ground_control/radio/trevor/needmedic3.ogg", text = "Oh, man I'm fucked!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/needmedic1.mp3", text = "Shit, nigga, I need some peace herb!"},
+        {sound = "ground_control/radio/ghetto/needmedic2.mp3", text = "Shit, cus', I'm hit!"},
+        {sound = "ground_control/radio/ghetto/needmedic3.mp3", text = "Aw fuck, that hurt, nigga!"},
+        {sound = "ground_control/radio/ghetto/needmedic4.mp3", text = "Shit, they shot my black ass!"}
     }
 }
 
@@ -819,16 +773,11 @@ command.variations = {us = {{sound = "ground_control/radio/us/ineedammo.mp3", te
         {sound = "ground_control/radio/rus/ammo4.mp3", text = "Боеприпасы кончились!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/needammo1.ogg", text = "I'm outta ammo!"},
-        {sound = "ground_control/radio/franklin/needammo2.ogg", text = "I'm out!"},
-        {sound = "ground_control/radio/franklin/needammo3.ogg", text = "I'm out!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/needammo1.ogg", text = "I'm out!"},
-        {sound = "ground_control/radio/trevor/needammo2.ogg", text = "Gun's empty!"},
-        {sound = "ground_control/radio/trevor/needammo3.ogg", text = "Outta bullets!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/needammo1.mp3", text = "Shit, I need some bullets!"},
+        {sound = "ground_control/radio/ghetto/needammo2.mp3", text = "I need some ammo, cus'!"},
+        {sound = "ground_control/radio/ghetto/needammo3.mp3", text = "Damn, man, I need bullets!"},
+        {sound = "ground_control/radio/ghetto/needammo4.mp3", text = "Shit, my shooter's all out!"}
     }
 }
 
@@ -878,16 +827,11 @@ command.variations = {us = {{sound = "ground_control/radio/us/ineedsomehelphere.
         {sound = "ground_control/radio/rus/help3.mp3", text = "Нужна помощь!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/help1.ogg", text = "Help me!"},
-        {sound = "ground_control/radio/franklin/help2.ogg", text = "No! No! No!"},
-        {sound = "ground_control/radio/franklin/help3.ogg", text = "Gimme some help!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/help1.ogg", text = "Can I get some help!?"},
-        {sound = "ground_control/radio/trevor/help2.ogg", text = "Ladies! Can I get a hand here?"},
-        {sound = "ground_control/radio/trevor/help3.ogg", text = "Hey! Help me!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/help1.mp3", text = "I need help, cus!"},
+        {sound = "ground_control/radio/ghetto/help2.mp3", text = "Shit, help, niggas!"},
+        {sound = "ground_control/radio/ghetto/help3.mp3", text = "Fuck man, I need help!"},
+        {sound = "ground_control/radio/ghetto/help4.mp3", text = "Help me out, niggas!"}
     }
 }
 
@@ -936,17 +880,10 @@ command.variations = {us = {{sound = "ground_control/radio/us/impinneddown.mp3",
         {sound = "ground_control/radio/rus/pinned3.mp3", text = "Меня зажали, где помощь?!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/pinned1.ogg", text = "I need some backup!"},
-        {sound = "ground_control/radio/franklin/pinned2.ogg", text = "Man, this is really !relaxing!"},
-        {sound = "ground_control/radio/franklin/pinned3.ogg", text = "Oh, fuck! Maybe this ain't so easy!"},
-        {sound = "ground_control/radio/franklin/pinned4.ogg", text = "(Distressed noises)"},
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/pinned1.ogg", text = "(Distressed noises)"},
-        {sound = "ground_control/radio/trevor/pinned2.ogg", text = "Oh me oh my fuckity fuck!"},
-        {sound = "ground_control/radio/trevor/pinned3.ogg", text = "I'm so scared!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/pinned1.mp3", text = "Shit, I'm surrounded!"},
+        {sound = "ground_control/radio/ghetto/pinned2.mp3", text = "Fuck, I'm surrounded, niggas!"},
+        {sound = "ground_control/radio/ghetto/pinned3.mp3", text = "Damn, I'm pinned down or some shit!"}
     }
 }
 
@@ -999,16 +936,10 @@ command.variations = {us = {{sound = "ground_control/radio/us/approachingenemypo
         {sound = "ground_control/radio/rus/approaching6lel.mp3", text = "Иду на врага мамку."}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/approaching1.ogg", text = "Les' goooooooooo!"},
-        {sound = "ground_control/radio/franklin/approaching2.ogg", text = "Gimme cover!"},
-        {sound = "ground_control/radio/franklin/approaching3.ogg", text = "Let's move, come on!"},
-        {sound = "ground_control/radio/franklin/approaching4.ogg", text = "Yeah, look who's comin'!"},
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/approaching1.ogg", text = "Let's go!"},
-        {sound = "ground_control/radio/trevor/approaching2.ogg", text = "Let's go!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/approaching1.mp3", text = "Aight, I'mma move up on these whiteboys!"},
+        {sound = "ground_control/radio/ghetto/approaching2.mp3", text = "I'mma get closer to them pigs!"},
+        {sound = "ground_control/radio/ghetto/approaching3.mp3", text = "I'm moving up on those punk-asses!"}
     }
 }
 
@@ -1066,16 +997,13 @@ command.variations = {
         {sound = "ground_control/radio/rus/fragout6.mp3", text = "Шухер!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/fragout1.ogg", text = "Hey, watch out!"},
-        {sound = "ground_control/radio/franklin/fragout2.ogg", text = "Hey, look out!"},
-        {sound = "ground_control/radio/franklin/fragout3.ogg", text = "Hey, look out!"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/fragout1.ogg", text = "I got a gift for this."},
-        {sound = "ground_control/radio/trevor/fragout2.ogg", text = "Fuck you!"},
-        {sound = "ground_control/radio/trevor/fragout2.ogg", text = "No jokes now, asshole!"},
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/fragout1.mp3", text = "Fire in the hole, or some shit."},
+        {sound = "ground_control/radio/ghetto/fragout2.mp3", text = "Watch out, niggas!"},
+        {sound = "ground_control/radio/ghetto/fragout3.mp3", text = "Fire in the hole!"},
+        {sound = "ground_control/radio/ghetto/fragout4.mp3", text = "Frag out, motherfuckers!"},
+        {sound = "ground_control/radio/ghetto/fragout5.mp3", text = "Watch yo ass, I's be throwin dynamite!"},
+        {sound = "ground_control/radio/ghetto/fragout6.mp3", text = "Ey, I'm throwin some explosives, look out!"}
     }
 }
 
@@ -1113,14 +1041,11 @@ command.variations = {
         {sound = "ground_control/radio/rus/clear2.mp3", text = "Все чисто."}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/areaclear1.ogg", text = "Any more of you marked?"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/areaclear1.ogg", text = "Nobody's here, now stay focused."},
-        {sound = "ground_control/radio/trevor/areaclear2.ogg", text = "No one's here. We lookin' for hookers?"},
-        {sound = "ground_control/radio/trevor/areaclear2.ogg", text = "Wonderful. Yeah, my tax dollars hard at work."},
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/areaclear1.mp3", text = "Ain't nobody here."},
+        {sound = "ground_control/radio/ghetto/areaclear2.mp3", text = "Area clear, niggas."},
+        {sound = "ground_control/radio/ghetto/areaclear3.mp3", text = "Nobody here, bruh."},
+        {sound = "ground_control/radio/ghetto/areaclear4.mp3", text = "Ain't no twelve around here."}
     }
 }
 
@@ -1172,14 +1097,11 @@ command.variations = {
         {sound = "ground_control/radio/rus/flank4.mp3", text = "Схади заходи, заходи сзади!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/flankthem1.ogg", text = "Let's move, come on!"},
-        {sound = "ground_control/radio/franklin/flankthem2.ogg", text = "We creepin on someone or what?"}
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/flankthem1.ogg", text = "Go, go go!"},
-        {sound = "ground_control/radio/trevor/flankthem2.ogg", text = "Let's go!"}
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/flankthem1.mp3", text = "Ey, go around them, niggas!"},
+        {sound = "ground_control/radio/ghetto/flankthem2.mp3", text = "Get behind 'em and blast 'em fools!"},
+        {sound = "ground_control/radio/ghetto/flankthem3.mp3", text = "Get around them pigs!"},
+        {sound = "ground_control/radio/ghetto/flankthem4.mp3", text = "Go around them pigs!"}
     }
 }
 
@@ -1216,16 +1138,13 @@ command.variations = {
         {sound = "ground_control/radio/rus/move3.mp3", text = "Двигай!"}
     },
 
-    franklin = {
-        {sound = "ground_control/radio/franklin/move1.ogg", text = "Ey hurry the fuck up!"},
-        {sound = "ground_control/radio/franklin/move2.ogg", text = "Hurry the hell up!"},
-        {sound = "ground_control/radio/franklin/move3.ogg", text = "Ey hurry up dog, come on!"},
-    },
-
-    trevor = {
-        {sound = "ground_control/radio/trevor/move1.ogg", text = "Go!"},
-        {sound = "ground_control/radio/trevor/move2.ogg", text = "Move!"},
-        {sound = "ground_control/radio/trevor/move3.ogg", text = "Move!"},
+    ghetto = {
+        {sound = "ground_control/radio/ghetto/move1.mp3", text = "Ey, move your black ass!"},
+        {sound = "ground_control/radio/ghetto/move2.mp3", text = "Hurry up, nigga!"},
+        {sound = "ground_control/radio/ghetto/move3.mp3", text = "Move, cus'!"},
+        {sound = "ground_control/radio/ghetto/move4.mp3", text = "Move, bruh!"},
+        {sound = "ground_control/radio/ghetto/move5.mp3", text = "Move up, niggas!"},
+        {sound = "ground_control/radio/ghetto/move6.mp3", text = "Go, go, go, motherfuckers!"}
     }
 }
 
