@@ -260,4 +260,9 @@ function GM:RegisterRush()
 
     GM:AddObjectivePositionToGametype("contendedpoint", "rp_outercanals",
             Vector(-1029.633667, -22.739532, 0.031250), "gc_contended_point", {captureDistance = 384})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_nightfever",
+            Vector(1826.427246, 3170.114258, 224.176666), "gc_capture_point", {captureDistance = 300})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_nightfever",
+            Vector(-440.161469, 3070.230469, 84.031250), "gc_capture_point", {captureDistance = 300})
 end

@@ -30,7 +30,8 @@ function GM:RegisterDrugBust()
     ghettoDrugBust.grenadeChance = 20 -- chance that a ghetto team player will receive a grenade upon spawn
 
     ghettoDrugBust.invertedSpawnpoints = {
-        de_chateau = true
+        de_chateau = true,
+        de_nightfever = true
     }
     ghettoDrugBust.timeLimitMap = {
         cs_backalley2 = 255
@@ -420,4 +421,11 @@ function GM:RegisterDrugBust()
             Vector(2806.182373, -846.709045, 369.094177), "gc_drug_point")
     GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_backalley2",
             Vector(1729.624390, 905.680908, 0.031250), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_nightfever",
+            Vector(-976.606812, 2492.989502, 202.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_nightfever",
+            Vector(1877.434570, 3205.291016, 224.306244), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_nightfever",
+            Vector(556.310547, -841.980713, 151.261887), "gc_drug_capture_point")
 end

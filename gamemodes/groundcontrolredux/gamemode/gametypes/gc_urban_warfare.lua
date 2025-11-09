@@ -205,4 +205,7 @@ function GM:RegisterUrbanWarfare()
 
     GM:AddObjectivePositionToGametype("urban_warfare", "nt_shrine",
             Vector(-908.194, 3617.923, 134.252), "gc_urban_warfare_capture_point", {capMin = Vector(-1444.414, 4119.525, 88.47), capMax = Vector(-170.031, 3000.031, 88.031)})
+
+    GM:AddObjectivePositionToGametype("urban_warfare", "de_nightfever",
+            Vector(796.220093, 2162.492432, 32.031250), "gc_urban_warfare_capture_point", {capMin = Vector(540.520081, 1925.677246, 30), capMax = Vector(1024.133179, 2415.914307, 175)})
 end
