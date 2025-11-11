@@ -278,7 +278,7 @@ function GM:RegisterDrugBust()
     end
 
     function ghettoDrugBust:OnRoundEnded(winTeam)
-        table.Empty(self.objectiveEnts)
+        self.objectiveEnts = {}
         self.stopCountdown = true
         self.objectiveCounter = 0
     end

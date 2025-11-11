@@ -129,7 +129,7 @@ function GM:ResetRoundData()
 end
 
 function GM:ClearObjectiveEntities()
-    table.Empty(self.ObjectiveEntities)
+    self.ObjectiveEntities = {}
 end
 
 function GM:onLocalPlayerHurt(data, localPlayer)
@@ -171,7 +171,7 @@ function GM:RemoveObjectiveEntity(obj)
 end
 
 function GM:clearDrawEntities()
-    table.Empty(self.DrawEntities)
+    self.DrawEntities = {}
 end
 
 function GM:AddDrawEntity(obj)
