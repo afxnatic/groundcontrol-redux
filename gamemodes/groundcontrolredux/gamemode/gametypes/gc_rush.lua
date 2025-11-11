@@ -260,4 +260,39 @@ function GM:RegisterRush()
 
     GM:AddObjectivePositionToGametype("contendedpoint", "rp_outercanals",
             Vector(-1029.633667, -22.739532, 0.031250), "gc_contended_point", {captureDistance = 384})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_nightfever",
+            Vector(1826.427246, 3170.114258, 224.176666), "gc_capture_point", {captureDistance = 300})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_nightfever",
+            Vector(-440.161469, 3070.230469, 84.031250), "gc_capture_point", {captureDistance = 300})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_cache_csgo",
+            Vector(-231.304993, 1701.554077, 1687.031250), "gc_capture_point", {captureDistance = 300})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_cache_csgo",
+            Vector(-67.424217, -1295.444702, 1659.031250), "gc_capture_point", {captureDistance = 300})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_hijack",
+            Vector(702.891357, -1398.023315, 32.031250), "gc_capture_point", {captureDistance = 256})
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_hijack",
+            Vector(1792.960693, -1415.367188, 32.031250), "gc_capture_point", {captureDistance = 225})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_bluecorridor",
+            Vector(-2085.821777, -1677.243774, -127.968750), "gc_capture_point", {captureDistance = 300})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_bluecorridor",
+            Vector(-260.469360, 970.353821, -127.968750), "gc_capture_point", {captureDistance = 225})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_parkhouse",
+            Vector(1080.107056, -987.899597, 416.031250), "gc_capture_point", {captureDistance = 192})
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_parkhouse",
+            Vector(964.823853, -616.545166, 300.901825), "gc_capture_point", {captureDistance = 240})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_thematrix_11",
+            Vector(351.913849, -672.955750, 448.267273), "gc_capture_point", {captureDistance = 264})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_thematrix_11",
+            Vector(-1932.744751, -84.294952, 32), "gc_capture_point", {captureDistance = 112})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_grovestreet",
+            Vector(1086.989502, 691.970581, 116), "gc_capture_point", {captureDistance = 225})
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_grovestreet",
+            Vector(-770.280762, 314.175323, 112), "gc_capture_point", {captureDistance = 225})
 end

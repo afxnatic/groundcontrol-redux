@@ -30,7 +30,8 @@ function GM:RegisterDrugBust()
     ghettoDrugBust.grenadeChance = 20 -- chance that a ghetto team player will receive a grenade upon spawn
 
     ghettoDrugBust.invertedSpawnpoints = {
-        de_chateau = true
+        de_chateau = true,
+        de_nightfever = true
     }
     ghettoDrugBust.timeLimitMap = {
         cs_backalley2 = 255
@@ -421,4 +422,58 @@ function GM:RegisterDrugBust()
             Vector(2806.182373, -846.709045, 369.094177), "gc_drug_point")
     GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_backalley2",
             Vector(1729.624390, 905.680908, 0.031250), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_nightfever",
+            Vector(-976.606812, 2492.989502, 202.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_nightfever",
+            Vector(1877.434570, 3205.291016, 224.306244), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_nightfever",
+            Vector(556.310547, -841.980713, 151.261887), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_lake_csgo",
+            Vector(3586.844482, -3941.349365, 72.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_lake_csgo",
+            Vector(2754.089844, -4877.398926, -244.968750), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_drugbust",
+            Vector(797.227600, 1021.609314, 65.682472), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_drugbust",
+            Vector(968.099976, 662.791138, 212.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_drugbust",
+            Vector(-2.121248, -561.990845, -7.968750), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_hijack",
+            Vector(-122.757294, 24.184364, 48.03770), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_hijack",
+            Vector(427.627899, -1423.778320, 41), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_hijack",
+            Vector(3712.893311, -2934.193115, -127.968750), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_parkhouse",
+            Vector(975.592285, -591.896179, 301), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_parkhouse",
+            Vector(1170.491699, -1061.085815, 456.5), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_parkhouse",
+            Vector(-1517.174561, 1186.609985, 164.467346), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_office07",
+            Vector(329.853180, -527.213867, -10.968750), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_office07",
+            Vector(514.211365, 795.161682, -10.968750), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_office07",
+            Vector(931.133728, -1973.516479, -215.968750), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_vegas_css",
+            Vector(118.194534, 203.581436, 38.850132), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_vegas_css",
+            Vector(-875.816833, -3027.153320, 32.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_vegas_css",
+            Vector(1774.309448, -3357.007568, 669.031250), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_grovestreet",
+            Vector(934.990417, 486.091888, 264.5), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_grovestreet",
+            Vector(-859.320190, 359.596619, 206), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_grovestreet",
+            Vector(1028.038696, -1846.813843, 64.031250), "gc_drug_capture_point")
 end

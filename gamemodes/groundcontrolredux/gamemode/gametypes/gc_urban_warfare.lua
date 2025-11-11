@@ -205,4 +205,16 @@ function GM:RegisterUrbanWarfare()
 
     GM:AddObjectivePositionToGametype("urban_warfare", "nt_shrine",
             Vector(-908.194, 3617.923, 134.252), "gc_urban_warfare_capture_point", {capMin = Vector(-1444.414, 4119.525, 88.47), capMax = Vector(-170.031, 3000.031, 88.031)})
+
+    GM:AddObjectivePositionToGametype("urban_warfare", "de_nightfever",
+            Vector(796.220093, 2162.492432, 32.031250), "gc_urban_warfare_capture_point", {capMin = Vector(540.520081, 1925.677246, 30), capMax = Vector(1024.133179, 2415.914307, 175)})
+
+    GM:AddObjectivePositionToGametype("urban_warfare", "de_lake_csgo",
+            Vector(3707.911133, -4192.041016, -71.968750), "gc_urban_warfare_capture_point", {capMin = Vector(3531.671631, -4016.025879, -74), capMax = Vector(3826.196289, -4413.272461, 22.017494)})
+
+    GM:AddObjectivePositionToGametype("urban_warfare", "cs_parkhouse",
+            Vector(1064.271240, -1013.608704, 560), "gc_urban_warfare_capture_point", {capMin = Vector(928.741821, -1208.777588, 558), capMax = Vector(1215.309448, -877.360046, 645)})
+
+    GM:AddObjectivePositionToGametype("urban_warfare", "de_vegas_css",
+            Vector(572.704712, -1697.698730, 312.790985), "gc_urban_warfare_capture_point", {capMin = Vector(192.185547, -1006.042603, 292), capMax = Vector(1006.459229, -2331.317139, 412.643951)})
 end
