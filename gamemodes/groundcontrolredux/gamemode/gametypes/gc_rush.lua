@@ -265,4 +265,9 @@ function GM:RegisterRush()
             Vector(1826.427246, 3170.114258, 224.176666), "gc_capture_point", {captureDistance = 300})
     GM:AddObjectivePositionToGametype("onesiderush", "de_nightfever",
             Vector(-440.161469, 3070.230469, 84.031250), "gc_capture_point", {captureDistance = 300})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_cache_csgo",
+            Vector(-231.304993, 1701.554077, 1687.031250), "gc_capture_point", {captureDistance = 300})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_cache_csgo",
+            Vector(-67.424217, -1295.444702, 1659.031250), "gc_capture_point", {captureDistance = 300})
 end
