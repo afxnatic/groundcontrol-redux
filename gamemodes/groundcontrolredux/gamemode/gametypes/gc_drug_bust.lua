@@ -461,4 +461,11 @@ function GM:RegisterDrugBust()
             Vector(514.211365, 795.161682, -10.968750), "gc_drug_point")
     GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_office07",
             Vector(931.133728, -1973.516479, -215.968750), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_vegas_css",
+            Vector(118.194534, 203.581436, 38.850132), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_vegas_css",
+            Vector(-875.816833, -3027.153320, 32.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_vegas_css",
+            Vector(1774.309448, -3357.007568, 669.031250), "gc_drug_capture_point")
 end
