@@ -280,4 +280,9 @@ function GM:RegisterRush()
             Vector(-2085.821777, -1677.243774, -127.968750), "gc_capture_point", {captureDistance = 300})
     GM:AddObjectivePositionToGametype("onesiderush", "de_bluecorridor",
             Vector(-260.469360, 970.353821, -127.968750), "gc_capture_point", {captureDistance = 225})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_parkhouse",
+            Vector(1080.107056, -987.899597, 416.031250), "gc_capture_point", {captureDistance = 192})
+    GM:AddObjectivePositionToGametype("onesiderush", "cs_parkhouse",
+            Vector(964.823853, -616.545166, 300.901825), "gc_capture_point", {captureDistance = 240})
 end
