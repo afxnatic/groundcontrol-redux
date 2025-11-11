@@ -37,7 +37,7 @@ GM:RegisterMapRotation("one_side_rush", {"de_dust", "de_dust2", "cs_assault", "c
         "de_inferno", "de_nuke", "de_port", "de_tides", "de_aztec", "de_chateau", "de_piranesi",
         "de_prodigy", "de_train", "de_secretcamp", "nt_isolation", "cs_jungle", "cs_siege_2010", "gc_outpost",
         "de_desert_atrocity_v3", "gc_depot_b2", "rp_downtown_v2", "rp_downtown_v4c_v2", "nt_marketa", "nt_redlight", "nt_rise",
-        "nt_skyline", "nt_shrine", "nt_dusk", "nt_transit", "de_nightfever", "de_cache_csgo", "cs_hijack"})
+        "nt_skyline", "nt_shrine", "nt_dusk", "nt_transit", "de_nightfever", "de_cache_csgo", "cs_hijack", "de_bluecorridor"})
 GM:RegisterMapRotation("ghetto_drug_bust_maps", {"cs_assault", "cs_compound", "cs_havana", "cs_militia", "cs_italy",
         "de_chateau", "de_inferno", "de_shanty_v3_fix", "gm_blackbrook_asylum", "nt_isolation", "nt_marketa", "nt_redlight", "nt_rise",
         "nt_skyline", "nt_shrine", "nt_dusk", "nt_transit", "cs_backalley2", "de_nightfever", "de_lake_csgo", "cs_drugbust",
