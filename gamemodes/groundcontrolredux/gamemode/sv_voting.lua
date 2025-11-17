@@ -38,15 +38,9 @@ function GM:canStartVote()
 end
 
 function GM:popVoteQueue()
-    local voteCount = #self.VoteQueue
-
-    if voteCount != 0 then
-        table.remove(self.VoteQueue, 1)
-    end
-
-    -- We have to setup the next vote.
-    if voteCount >= 2 then
+    if #self.VoteQueue > 0 then
         local data = self.VoteQueue[1]
+        table.remove(self.VoteQueue, 1)
         self:setupCurrentVote(data.title, data.options, data.targets, data.picks, data.randomize, data.teamTargets, data.finishCallback)
     end
 end
