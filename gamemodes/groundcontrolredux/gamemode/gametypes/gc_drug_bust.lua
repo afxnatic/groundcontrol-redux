@@ -31,7 +31,9 @@ function GM:RegisterDrugBust()
 
     ghettoDrugBust.invertedSpawnpoints = {
         de_chateau = true,
-        de_nightfever = true
+        de_nightfever = true,
+        ttt_rust_v2c = true,
+        de_overpass_cyberpunk = true
     }
     ghettoDrugBust.timeLimitMap = {
         cs_backalley2 = 255
@@ -476,4 +478,25 @@ function GM:RegisterDrugBust()
             Vector(-859.320190, 359.596619, 206), "gc_drug_point")
     GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_grovestreet",
             Vector(1028.038696, -1846.813843, 64.031250), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "ttt_rust_v2c",
+            Vector(-2563.762695, 2553.706299, 111.520187), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "ttt_rust_v2c",
+            Vector(-3443.787109, 1890.511719, 103.643188), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "ttt_rust_v2c",
+            Vector(-4224.863770, 2818.371094, 65.963066), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_backalley_remake",
+            Vector(-866.120850, 1989.783569, -459.968750), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_backalley_remake",
+            Vector(-817.768738, 1184.311523, -473.968750), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_backalley_remake",
+            Vector(326.034241, -111.580956, -511.969116), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_overpass_cyberpunk",
+            Vector(-1187.367676, 104.184311, 99.031250), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_overpass_cyberpunk",
+            Vector(-2392.364990, 1014.077942, 531.890930), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "de_overpass_cyberpunk",
+            Vector(-1547.297852, -3338.216553, 304.993103), "gc_drug_capture_point")
 end
