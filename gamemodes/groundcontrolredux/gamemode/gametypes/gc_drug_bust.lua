@@ -31,7 +31,8 @@ function GM:RegisterDrugBust()
 
     ghettoDrugBust.invertedSpawnpoints = {
         de_chateau = true,
-        de_nightfever = true
+        de_nightfever = true,
+        ttt_rust_v2c = true
     }
     ghettoDrugBust.timeLimitMap = {
         cs_backalley2 = 255
@@ -475,4 +476,11 @@ function GM:RegisterDrugBust()
             Vector(-859.320190, 359.596619, 206), "gc_drug_point")
     GM:AddObjectivePositionToGametype("ghettodrugbust", "cs_grovestreet",
             Vector(1028.038696, -1846.813843, 64.031250), "gc_drug_capture_point")
+
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "ttt_rust_v2c",
+            Vector(-2563.762695, 2553.706299, 111.520187), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "ttt_rust_v2c",
+            Vector(-3443.787109, 1890.511719, 103.643188), "gc_drug_point")
+    GM:AddObjectivePositionToGametype("ghettodrugbust", "ttt_rust_v2c",
+            Vector(-4224.863770, 2818.371094, 65.963066), "gc_drug_capture_point")
 end
