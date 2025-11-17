@@ -147,7 +147,7 @@ end
 function GM:resetVoteData()
     self.VoteOption = {}
     self.VotedPlayer = {}
-    self.PossibleVoteOption = {}
+    self.PossibleVoteOptions = {}
     self.VoteActive = false
     self.VoteStartTime = nil
     self.VoteTitle = nil
