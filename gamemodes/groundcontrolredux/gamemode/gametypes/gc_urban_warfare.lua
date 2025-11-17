@@ -220,4 +220,7 @@ function GM:RegisterUrbanWarfare()
 
     GM:AddObjectivePositionToGametype("urban_warfare", "ttt_rust_v2c",
             Vector(-3008.383301, 2197.602783, 326.408875), "gc_urban_warfare_capture_point", {capMin = Vector(-2867.071289, 2017.555786, 80.392570), capMax = Vector(-3171.422119, 2367.586426, 620.781189)})
+
+    GM:AddObjectivePositionToGametype("urban_warfare", "de_overpass_cyberpunk",
+            Vector(-2540.820312, -1980.965820, 519.766479), "gc_urban_warfare_capture_point", {capMin = Vector(-3054.232422, -1982.928833, 472.031250), capMax = Vector(-1953.801025, -2189.934570, 642.623901)})
 end

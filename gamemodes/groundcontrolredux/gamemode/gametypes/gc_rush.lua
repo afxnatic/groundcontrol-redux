@@ -300,4 +300,9 @@ function GM:RegisterRush()
             Vector(-2563.762695, 2553.706299, 111.520187), "gc_capture_point", {captureDistance = 225})
     GM:AddObjectivePositionToGametype("onesiderush", "ttt_rust_v2c",
             Vector(-3443.787109, 1890.511719, 103.643188), "gc_capture_point", {captureDistance = 225})
+
+    GM:AddObjectivePositionToGametype("onesiderush", "de_overpass_cyberpunk",
+            Vector(-2278.662842, 756.429504, 472.281250), "gc_capture_point", {captureDistance = 255})
+    GM:AddObjectivePositionToGametype("onesiderush", "de_overpass_cyberpunk",
+            Vector(1062.611938, 19.232035, 98.031250), "gc_capture_point", {captureDistance = 255})
 end
