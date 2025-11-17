@@ -64,8 +64,12 @@ function PLAYER:CalculateWeight(withoutWeight, withWeight)
         -- take weapon weight into account, move conditional check up here to avoid arithmetic error
         local weaponWeight = weapon.weight or 0
         totalWeight = totalWeight + weaponWeight
+
         -- take ammo weight into account
-        totalWeight = totalWeight + GAMEMODE:GetAmmoWeight(weapon.Primary.Ammo, weapon:Clip1() + self:GetAmmoCount(weapon.Primary.Ammo))
+        -- Primary is sometimes nil for some reason
+        if weapon.Primary then
+            totalWeight = totalWeight + GAMEMODE:GetAmmoWeight(weapon.Primary.Ammo, weapon:Clip1() + self:GetAmmoCount(weapon.Primary.Ammo))
+        end
     end
 
     if !self:IsBot() then
