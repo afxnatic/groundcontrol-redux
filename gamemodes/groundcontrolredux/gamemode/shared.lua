@@ -91,8 +91,90 @@ end
 
 -- CW 2.0 configuration over
 
+-- HACK: We have to detour this function to allow weapon switching during reloads...
+local function NewHolster(base, wep)
+    -- can't switch if neither the weapon we want to switch to or the wep we're trying to switch to are not valid
+    if not IsValid(wep) and not IsValid(base.SwitchWep) then
+        base.SwitchWep = nil
+        return false
+    end
+
+    local CT = CurTime()
+
+    -- can't holster if we have a global delay on the weapon
+    if CT < base.GlobalDelay or CT < base.HolsterWait then
+        return false
+    end
+
+    if base.dt.HolsterDelay ~= 0 and CT < base.dt.HolsterDelay then
+        return false
+    end
+
+    -- can't holster if there are sequenced actions
+    if #base._activeSequences > 0 then
+        return false
+    end
+
+    if base.ReloadDelay and not GetConVar("gc_cw2_allow_switching_during_reloads"):GetBool() then
+        return false
+    end
+
+    if base.dt.State ~= CW_HOLSTER_START then
+        base.dt.HolsterDelay = CurTime() + base.HolsterTime
+    end
+
+    base.dt.State = CW_HOLSTER_START
+
+    -- if holster sequence is over, let us select the desired weapon
+    if base.SwitchWep and base.dt.State == CW_HOLSTER_START and CurTime() > base.dt.HolsterDelay then
+        base.dt.State = CW_IDLE
+        base.dt.HolsterDelay = 0
+
+        return true
+    end
+
+    -- if it isn't, make preparations for it
+    base.ShotgunReloadState = 0
+    base.ReloadDelay = nil
+
+    if base:filterPrediction() and base.holsterSound then -- quick'n'dirty prediction fix
+        base:EmitSound("CW_HOLSTER", 70, 100)
+        base.holsterSound = false
+
+        if IsFirstTimePredicted() then
+            if base.holsterAnimFunc then
+                base:holsterAnimFunc()
+            else
+                if base.Animations.holster then
+                    base:sendWeaponAnim("holster")
+                end
+            end
+        end
+    end
+
+    base.SwitchWep = wep
+    base.SuppressTime = nil
+
+    if base.dt.M203Active then
+        if SERVER and SP then
+            SendUserMessage("CW20_M203OFF", base.Owner)
+        end
+
+        if CLIENT then
+            base:resetM203Anim()
+        end
+    end
+
+    base.dt.M203Active = false
+end
+
 function GM:Initialize()
     self.BaseClass.Initialize(self)
+
+    -- HACK: We have to detour this function to allow weapon switching during reloads...
+    local base = weapons.GetStored("cw_base")
+
+    base.Holster = NewHolster
 end
 
 if CLIENT then
@@ -156,6 +238,18 @@ CustomizableWeaponry.callbacks:addNew("preventAttachment", "GroundControl_preven
     end
 
     return desiredAttachments > self:GetOwner():getUnlockedAttachmentSlots()
+end)
+
+CustomizableWeaponry.callbacks:addNew("beginReload", "GroundControl_allowHolsterDuringReload", function(self)
+    if not GetConVar("gc_cw2_allow_switching_during_reloads"):GetBool() then
+        return
+    end
+
+    local curTime = CurTime()
+
+    if curTime < self.GlobalDelay then
+        self.GlobalDelay = curTime
+    end
 end)
 
 CustomizableWeaponry.callbacks:addNew("disableInteractionMenu", "GroundControl_disableInteractionMenu", function(self)
