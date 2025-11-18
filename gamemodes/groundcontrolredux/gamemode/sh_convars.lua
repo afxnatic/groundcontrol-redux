@@ -28,6 +28,11 @@ CreateConVar("gc_default_rounds_per_map", 16, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVA
 CreateConVar("gc_urban_warfare_rounds_per_map", 6, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED}, "num rounds per urban warfare game", 2)
 CreateConVar("gc_enable_traits", 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED}, "allow traits to take effect - currently does nothing")
 CreateConVar("gc_print_damage_log", 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED}, "show damage log in console after round")
+
+-- parity for everyone - force complex telescopics (this could hurt the FPS on a lot of people's systems, but we'll see how this goes, if people complain I will probably disable this)
+-- simple telescopics are a lot easier to use gameplay-wise, and they provide an advantage over those that use complex telescopics
+-- because they disorient much less than complex telescopics (aiming through PIP is a pain in the ass, especially on close ranges, since it disorients like crazy, on the flip side - it's like that IRL too)
+-- so to make things fair, I am forcing complex telescopics
 CreateConVar("gc_force_pip_scopes", 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED}, "0/1 to turn on/off pip scopes for everyone", 0, 1)
 CreateConVar("gc_force_free_aim", 0, {FCVAR_ARCHIVE, FCVAR_NOTIFY, FCVAR_REPLICATED}, "0/1 to turn on/off free-aim hipfire for everyone", 0, 1)
 

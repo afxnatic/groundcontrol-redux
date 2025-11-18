@@ -50,12 +50,6 @@ GM.ViewOffsetDucked = Vector(0, 0, 40)
 -- beware that during playtests I noticed a weird thing - when free aim is forced on, people play much, MUCH slower and in general the gamemode turns into a campfest
 GM.FORCE_FREE_AIM = false
 
--- parity for everyone - force complex telescopics (this could hurt the FPS on a lot of people's systems, but we'll see how this goes, if people complain I will probably disable this)
--- simple telescopics are a lot easier to use gameplay-wise, and they provide an advantage over those that use complex telescopics
--- because they disorient much less than complex telescopics (aiming through PIP is a pain in the ass, especially on close ranges, since it disorients like crazy, on the flip side - it's like that IRL too)
--- so to make things fair, I am forcing complex telescopics
-GM.FORCE_COMPLEX_TELESCOPICS = true
-
 GM.SIDEWAYS_SPRINT_MULT = 0.1 -- if we're sprinting sideways + forward, we take a small hit to our movement speed
 GM.STRAFE_SPRINT_MULT = 0.25 -- if we're sprinting only sideways (not forward + sideways), then we take a big hit to our movement speed
 GM.BACKWARDS_SPRINT_MULT = 0.25 -- if we're sprinting backwards, we take a big hit to our movement speed
