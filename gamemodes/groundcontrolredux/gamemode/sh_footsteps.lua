@@ -107,7 +107,6 @@ GM.SNEAKWALK_LOUDNESS_VELOCITY_AFFECTOR = 0.7 -- multiply loudness increase from
 GM.SNEAKWALK_LOUDNESS_OVERALL_AFFTER = 0.5 -- overall multiplier for loudness when walking
 GM.MAX_LOUDNESS_FROM_VELOCITY = 25 -- max loudness we can get from velocity
 GM.NOISE_PER_KILOGRAM = 1.25
-GM.SNEAKWALK_VELOCITY_CUTOFF = 105 -- if the player is walking slower than this, he is considered to be sneak-walking
 
 -- key is surface ID, value is table with sounds, filled automatically
 GM.SURFACE_FOOTSTEP_SOUNDS = {}
@@ -162,7 +161,7 @@ function GM:PlayerFootstep(ply, position, foot, snd, volume, filter)
     if self.DEFAULT_FOOTSTEP_TO_MATERIAL[snd] != nil then
         materialID = self.DEFAULT_FOOTSTEP_TO_MATERIAL[snd]
     end
-    local loudnessID, noiseLevel = self:GetLoudnessLevel(ply)
+    local loudnessID, _ = self:GetLoudnessLevel(ply)
     local stepSound = self:GetWalkSound(materialID, loudnessID)
 
     -- if SERVER then
@@ -195,7 +194,7 @@ function GM:GetLoudnessLevel(ply)
     local crouching = ply:Crouching()
     local velLength = ply:GetVelocity():Length()
 
-    local sneakWalking = velLength <= self.SNEAKWALK_VELOCITY_CUTOFF
+    local sneakWalking = velLength <= ply:GetSlowWalkSpeed()
 
     local overallAffector = 1
     local velocityAffector = 1
