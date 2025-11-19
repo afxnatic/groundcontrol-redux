@@ -29,6 +29,10 @@ end
 if !FULL_INIT and SERVER then
     -- physical bullets mess with this right now due to having no effective range, could maybe change this to use damage?
     CustomizableWeaponry.callbacks:addNew("bulletCallback", "GroundControl_bulletCallback", function(wep, ply, traceResult, dmgInfo)
+        if not GetConVar("gc_adrenaline_enable"):GetBool() then
+            return
+        end
+
         local effectiveRange = wep.EffectiveRange
         if !effectiveRange then
             effectiveRange = weapons.Get(wep.weapon):getEffectiveRange()

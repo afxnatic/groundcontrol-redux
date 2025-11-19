@@ -14,6 +14,7 @@ CreateConVar("gc_base_run_speed", 270, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "base run 
 CreateConVar("gc_base_walk_speed", 200, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "base walk speed - if this gets too low, cw2 viewmodels start getting this really ugly jitter", 100)
 
 -- Adrenaline cvars
+CreateConVar("gc_adrenaline_enable", 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "enable/disable adrenaline aka suppression system", 0, 1)
 CreateConVar("gc_adrenaline_maxspeed_increase", 0.1, {FCVAR_ARCHIVE, FCVAR_NOTIFY})
 CreateConVar("gc_adrenaline_stamina_drain_modifier", 0.5, {FCVAR_ARCHIVE, FCVAR_NOTIFY})
 CreateConVar("gc_adrenaline_stamina_regen_modifier", 0.1, {FCVAR_ARCHIVE, FCVAR_NOTIFY})
