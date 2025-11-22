@@ -251,10 +251,10 @@ function GM:HUDPaint()
         end
     end
 
-    local teamMateMarkerDisplayDistance = GAMEMODE.teamMateMarkerDisplayDistance
+    -- local teamMateMarkerDisplayDistance = GAMEMODE.teamMateMarkerDisplayDistance
 
     local ourShootPos = ply:GetShootPos()
-    local ourAimVec = ply:GetAimVector()
+    -- local ourAimVec = ply:GetAimVector()
 
     traceData.start = ourShootPos
     traceData.filter = ply
@@ -268,23 +268,27 @@ function GM:HUDPaint()
         -- if obj != ply and obj:Alive() then
             local pos = obj:GetBonePosition(obj:LookupBone("ValveBiped.Bip01_Head1"))
 
-            if pos:Distance(ourShootPos) <= teamMateMarkerDisplayDistance then
-                self:drawPlayerMarker(pos, obj, midX, midY)
-            else
-                local direction = (pos - ourShootPos):GetNormal()
-                local dotToGeneralDirection = ourAimVec:Dot(direction)
+            -- People keep getting killed because markers will stop rendering depending on distance and aim dot product.
+            -- The root cause of this is models being shared between teams in gametypes other than GDB.
+            -- We can't do anything about that without rewriting the voice system, so this should suffice for now.
+            -- if pos:Distance(ourShootPos) <= teamMateMarkerDisplayDistance then
+            --     self:drawPlayerMarker(pos, obj, midX, midY)
+            -- else
+            --     local direction = (pos - ourShootPos):GetNormal()
+            --     local dotToGeneralDirection = ourAimVec:Dot(direction)
 
-                if dotToGeneralDirection >= 0.9 then
-                    traceData.endpos = traceData.start + direction * 4096
+            --     if dotToGeneralDirection >= 0.9 then
+            --         traceData.endpos = traceData.start + direction * 4096
 
-                    local trace = util.TraceLine(traceData)
-                    local ent = trace.Entity
+            --         local trace = util.TraceLine(traceData)
+            --         local ent = trace.Entity
 
-                    if IsValid(ent) and ent == obj then
+                    -- if IsValid(ent) and ent == obj then
+                    if IsValid(obj) then
                         self:drawPlayerMarker(pos, obj, midX, midY)
                     end
-                end
-            end
+            --     end
+            -- end
         end
 
         obj.withinPVS = false
@@ -365,43 +369,48 @@ function GM:drawPlayerMarker(pos, obj, midX, midY)
     pos.z = pos.z + 8
 
     local coords = pos:ToScreen()
+
+    if not coords.visible then
+        return
+    end
+
     surface.SetTexture(self.MarkerTexture)
 
-    if coords.visible then
-        local dist = math.Distance(coords.x, coords.y, midX, midY)
-        local alpha = math.Clamp(dist, 30, 255)
+    local dist = math.Distance(coords.x, coords.y, midX, midY)
+    local alpha = math.Clamp(dist, 30, 255)
 
-        self.HUD_COLORS.white.a = alpha
-        self.HUD_COLORS.black.a = alpha
+    self.HUD_COLORS.white.a = alpha
+    self.HUD_COLORS.black.a = alpha
 
-        draw.ShadowText(obj:Nick(), "CW_HUD14", coords.x + 4, coords.y - 10, self.HUD_COLORS.white, self.HUD_COLORS.black, 1, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+    draw.ShadowText(obj:Nick(), "CW_HUD14", coords.x + 4, coords.y - 10, self.HUD_COLORS.white, self.HUD_COLORS.black, 1, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 
-        local healthColor = 1 - (obj:Health() / 100)
-        surface.SetDrawColor(200 + healthColor * 255, 255 - healthColor * 155, 200 - healthColor * 100, alpha)
-        surface.DrawTexturedRect(coords.x, coords.y, 8, 8)
+    local healthColor = 1 - (obj:Health() / 100)
+    surface.SetDrawColor(200 + healthColor * 255, 255 - healthColor * 155, 200 - healthColor * 100, alpha)
+    surface.DrawTexturedRect(coords.x, coords.y, 8, 8)
 
-        if obj.statusEffects then
-            local statusEffects = GAMEMODE.StatusEffects
-            local xPos = coords.x + 13
+    if not obj.statusEffects then
+        return
+    end
 
-            for key, statusEffectID in ipairs(obj.statusEffects.numeric) do
-                local data = statusEffects[statusEffectID]
+    local statusEffects = GAMEMODE.StatusEffects
+    local xPos = coords.x + 13
 
-                surface.SetTexture(data.texture)
+    for key, statusEffectID in ipairs(obj.statusEffects.numeric) do
+        local data = statusEffects[statusEffectID]
 
-                surface.SetDrawColor(0, 0, 0, 255)
-                surface.DrawTexturedRect(xPos, coords.y, 10, 10)
+        surface.SetTexture(data.texture)
 
-                surface.SetDrawColor(255, 255, 255, 255)
-                surface.DrawTexturedRect(xPos - 1, coords.y - 1, 10, 10)
+        surface.SetDrawColor(0, 0, 0, 255)
+        surface.DrawTexturedRect(xPos, coords.y, 10, 10)
 
-                xPos = xPos + 13
-            end
+        surface.SetDrawColor(255, 255, 255, 255)
+        surface.DrawTexturedRect(xPos - 1, coords.y - 1, 10, 10)
 
-            if obj.statusEffects.map.bleeding then -- if the target is bleeding and we can draw his coords, we can then run a trace to check whether we can bandage him
-                self.canTraceForBandaging = true
-            end
-        end
+        xPos = xPos + 13
+    end
+
+    if obj.statusEffects.map.bleeding then -- if the target is bleeding and we can draw his coords, we can then run a trace to check whether we can bandage him
+        self.canTraceForBandaging = true
     end
 end
 
