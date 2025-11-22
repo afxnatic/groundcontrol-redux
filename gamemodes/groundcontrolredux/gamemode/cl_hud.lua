@@ -53,6 +53,10 @@ traceData.mask = bit.bor(CONTENTS_SOLID, CONTENTS_OPAQUE, CONTENTS_MOVEABLE, CON
 
 GM.BaseHUDX = 50
 
+local UNIQUE_MODEL_GAMETYPES = {
+    ["ghettodrugbust"] = true
+}
+
 function GM:HUDPaint()
     local ply = LocalPlayer()
     local scrW, scrH = ScrW(), ScrH()
@@ -261,6 +265,8 @@ function GM:HUDPaint()
 
     self.canTraceForBandaging = false
 
+    local gametypeModelsUnique = UNIQUE_MODEL_GAMETYPES[self.curGametype.name]
+
     for key, obj in ipairs(team.GetPlayers(ply:Team())) do
     -- for key, obj in ipairs(self.teamPlayers) do
         -- only draw the player if we can see him, GMod has no clientside ways of checking whether the player is in PVS, check cl_render.lua for the second part of this
@@ -271,24 +277,29 @@ function GM:HUDPaint()
             -- People keep getting killed because markers will stop rendering depending on distance and aim dot product.
             -- The root cause of this is models being shared between teams in gametypes other than GDB.
             -- We can't do anything about that without rewriting the voice system, so this should suffice for now.
-            -- if pos:Distance(ourShootPos) <= teamMateMarkerDisplayDistance then
-            --     self:drawPlayerMarker(pos, obj, midX, midY)
-            -- else
-            --     local direction = (pos - ourShootPos):GetNormal()
-            --     local dotToGeneralDirection = ourAimVec:Dot(direction)
+            if gametypeModelsUnique then
+                if pos:Distance(ourShootPos) <= teamMateMarkerDisplayDistance then
+                    self:drawPlayerMarker(pos, obj, midX, midY)
+                else
+                    local direction = (pos - ourShootPos):GetNormal()
+                    local dotToGeneralDirection = ourAimVec:Dot(direction)
 
-            --     if dotToGeneralDirection >= 0.9 then
-            --         traceData.endpos = traceData.start + direction * 4096
+                    if dotToGeneralDirection >= 0.9 then
+                        traceData.endpos = traceData.start + direction * 4096
 
-            --         local trace = util.TraceLine(traceData)
-            --         local ent = trace.Entity
+                        local trace = util.TraceLine(traceData)
+                        local ent = trace.Entity
 
-                    -- if IsValid(ent) and ent == obj then
-                    if IsValid(obj) then
-                        self:drawPlayerMarker(pos, obj, midX, midY)
+                        if IsValid(ent) and ent == obj then
+                            self:drawPlayerMarker(pos, obj, midX, midY)
+                        end
                     end
-            --     end
-            -- end
+                end
+            else
+                if IsValid(obj) then
+                    self:drawPlayerMarker(pos, obj, midX, midY)
+                end
+            end
         end
 
         obj.withinPVS = false
