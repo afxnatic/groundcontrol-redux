@@ -255,10 +255,8 @@ function GM:HUDPaint()
         end
     end
 
-    -- local teamMateMarkerDisplayDistance = GAMEMODE.teamMateMarkerDisplayDistance
-
     local ourShootPos = ply:GetShootPos()
-    -- local ourAimVec = ply:GetAimVector()
+    local ourAimVec = ply:GetAimVector()
 
     traceData.start = ourShootPos
     traceData.filter = ply
@@ -278,7 +276,7 @@ function GM:HUDPaint()
             -- The root cause of this is models being shared between teams in gametypes other than GDB.
             -- We can't do anything about that without rewriting the voice system, so this should suffice for now.
             if gametypeModelsUnique then
-                if pos:Distance(ourShootPos) <= teamMateMarkerDisplayDistance then
+                if pos:Distance(ourShootPos) <= GAMEMODE.teamMateMarkerDisplayDistance then
                     self:drawPlayerMarker(pos, obj, midX, midY)
                 else
                     local direction = (pos - ourShootPos):GetNormal()
